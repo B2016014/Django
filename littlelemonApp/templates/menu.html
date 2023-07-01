@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %} 
+{% url menu as baseurl %}
+
+<section id="menu">
+    <h1>Menu</h1>
+    {% for item in menu %} 
+        <div id="item">
+            <li ><a href="{{baseurl}}{{item.id}}" id="item-name">{{item.name}}</a></li>
+            <li ><a href="{{baseurl}}{{item.id}}" id="item-price">$ {{item.price}}</a></li>
+        </div>
+    {% endfor %}
+    
+</section>
+{% endblock %}

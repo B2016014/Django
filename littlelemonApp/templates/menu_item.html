@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section id="menu-item">
+    <div id="menu-nav">
+        <h1>Menu item</h1>
+        <div>
+            <span><a href="{%url 'home' %}">Home</a>/</span>
+            <span><a href="{%url 'menu' %}">Menu</a>/</span>
+            <span>{{item.name}}</span>
+        </div>
+    </div>
+
+    <div class="row">
+    
+        <div class="col">
+            <h2 id="item-name">{{item.name}}</h2>
+            <p id="item-desc">{{item.description}}</p>
+            <p id="item-price">Price: ${{item.price}}</p>
+        </div>
+
+        <div class="col">
+            <img src="{% static 'images/menu/'|add:item.name|add:'.jpg' %}" alt="{{item.name}}" id="item_img">
+        </div>
+
+    </div>
+</section>
+{% endblock %}
